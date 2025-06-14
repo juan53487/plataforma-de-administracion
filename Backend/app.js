@@ -28,10 +28,6 @@ app.use('/api/user-roles', userRoleRoutes); // Ruta de rol de usuarios
 app.use('/api/module-permissions', modulePermissionRoutes); // Ruta para definir permisos de rol en modulos
 
 
-
-
-
-
 const PORT = process.env.PORT || 3000;
 
 // Iniciar el servidor

@@ -22,7 +22,6 @@ const register = async (req, res) => {
 const login = async (req, res) => {
   const { email, password } = req.body;
   
-  
   try {
     const user = await User.findOne({ where: { email } });
     
@@ -36,7 +35,7 @@ const login = async (req, res) => {
     
     const valid = await bcrypt.compare(password, user.password);
     if (!valid) return res.status(401).json({ error: 'Contraseña incorrecta' });
-
+    
     const token = generateToken(user);
     res.json({ token, user: { id: user.id, name: user.name, email: user.email, is_superuser: user.is_superuser } });
   } catch (err) {

@@ -105,7 +105,7 @@ const getUserModulesWithPermissions = async (req, res) => {
         name: mod.name,
         permissions: mod.Permissions.map(p => p.name)
       }));
-      console.log("Modulos del super usuario: ", result)
+      //console.log("Modulos del super usuario: ", result)
 
       return res.json({ modules: result });
     }
